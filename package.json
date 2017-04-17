@@ -1,1 +1,39 @@
-{     "devDependencies": {         "express-es6-template-engine": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-express-es6-template-engine",     "homepage": "https://github.com/npmdoc/node-npmdoc-express-es6-template-engine",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-express-es6-template-engine.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "api documentation for [express-es6-template-engine (v1.1.1)](https://github.com/dondido/express-es6-template-engine#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-express-es6-template-engine.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-es6-template-engine) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "express-es6-template-engine": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-express-es6-template-engine",
+    "keywords": [
+        "documentation",
+        "express-es6-template-engine"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_express_es6_template_engine.js",
+    "name": "npmdoc-express-es6-template-engine",
+    "nameAlias": "npmdoc_express_es6_template_engine",
+    "nameOriginal": "npmdoc-express-es6-template-engine",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-express-es6-template-engine.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
