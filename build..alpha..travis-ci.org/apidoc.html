@@ -1,0 +1,149 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/dondido/express-es6-template-engine#readme"
+
+    >express-es6-template-engine (v1.1.1)</a>
+</h1>
+<h4>Express ES6 string template engine</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-es6-template-engine">module express-es6-template-engine</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-es6-template-engine.express-es6-template-engine">
+            function <span class="apidocSignatureSpan"></span>express-es6-template-engine
+            <span class="apidocSignatureSpan">(filePath, dict, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-es6-template-engine.toString">
+            function <span class="apidocSignatureSpan">express-es6-template-engine.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-es6-template-engine" id="apidoc.module.express-es6-template-engine">module express-es6-template-engine</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-es6-template-engine.express-es6-template-engine" id="apidoc.element.express-es6-template-engine.express-es6-template-engine">
+        function <span class="apidocSignatureSpan"></span>express-es6-template-engine
+        <span class="apidocSignatureSpan">(filePath, dict, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(filePath, dict, callback) =&#x3e; {
+  const compile = (err, content) =&#x3e; {
+    const locals = dict.locals || {},
+      localsList = Object.keys(locals),
+      partialsList = Object.keys(dict.partials || {}),
+      valList = localsList.map(i =&#x3e; locals[i]),
+      keyList = localsList.concat(partialsList);
+    if(err) {
+      return callback(new Error(err));
+    }
+    if(partialsList.length) {
+      return Promise.all(partialsList.map(i =&#x3e; readPartial(dict.partials[i])))
+        .then(values =&#x3e; {
+          const valTempList = valList.concat(values);
+          valList.push(...values.map(i =&#x3e; interpolate(i, keyList, valTempList)));
+          return callback(null, interpolate(content, keyList, valList));
+        })
+        .catch(err =&#x3e; callback(err));
+    }
+    return callback(null, interpolate(content, keyList, valList));
+  };
+  if (dict.template) {
+    return compile(null, filePath);
+  }
+  fs.readFile(filePath, &#x27;utf-8&#x27;, compile);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-es6-template-engine.toString" id="apidoc.element.express-es6-template-engine.toString">
+        function <span class="apidocSignatureSpan">express-es6-template-engine.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
