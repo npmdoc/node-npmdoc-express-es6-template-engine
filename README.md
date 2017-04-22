@@ -1,4 +1,7 @@
-# api documentation for  [express-es6-template-engine (v1.1.1)](https://github.com/dondido/express-es6-template-engine#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-es6-template-engine.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-es6-template-engine) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine)
+# npmdoc-express-es6-template-engine
+
+#### api documentation for  [express-es6-template-engine (v1.1.1)](https://github.com/dondido/express-es6-template-engine#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-express-es6-template-engine.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-express-es6-template-engine) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine.svg)](https://travis-ci.org/npmdoc/node-npmdoc-express-es6-template-engine)
+
 #### Express ES6 string template engine
 
 [![NPM](https://nodei.co/npm/express-es6-template-engine.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/express-es6-template-engine)
@@ -58,7 +61,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "version": "1.1.1"
+    "version": "1.1.1",
+    "bin": {}
 }
 ```
 
